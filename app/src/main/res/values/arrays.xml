@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Spinner Options -->
+    <string-array name="house_system_options">
+        <item>Placidus</item>
+        <item>Campanus</item>
+        <item>Koch</item>
+        <item>Porphyrius</item>
+        <item>Regiomontanus</item>
+        <item>Equal</item>
+        <item>Vehlow Equal</item>
+        <item>Whole</item>
+        <item>Axial Rotation</item>
+        <item>Horizontal</item>
+        <item>Polich/Page</item>
+        <item>Alcabitius</item>
+        <item>Gauquelin sectors</item>
+        <item>Morinus</item>
+
+    </string-array>
+
+    <string-array name="sidereal_mode_options">
+        <item>Tropical</item>
+        <item>Fagan Bradley</item>
+
+    </string-array>
+</resources>

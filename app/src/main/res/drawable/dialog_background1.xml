@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/dark_blue" /> <!-- Color de fondo del cuadro de diálogo -->
+    <corners android:radius="2dp" /> <!-- Radio de las esquinas del cuadro de diálogo -->
+    <padding android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp" /> <!-- Espaciado interno del cuadro de diálogo -->
+    <gradient
+        android:startColor="@color/dark_yellow_0"
+    android:endColor="#00000000"
+    android:angle="270" /> <!-- Dirección del gradiente (verticalmente) -->
+</shape>

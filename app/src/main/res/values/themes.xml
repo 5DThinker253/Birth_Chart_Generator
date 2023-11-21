@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BirthChartCalculator" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here.
+        <item name="android:popupBackground">@style/ToolbarMenuStyle</item> -->
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:windowContentOverlay">@drawable/border_drawable</item>
+        <item name="android:textAppearance">@style/TextStyle</item>
+        <item name="android:textColor">@color/white_60</item>
+        <item name="android:textColorHighlight">@color/white</item>
+
+        <item name="android:textColorPrimary">@color/white_60</item>
+        <item name="android:textColorSecondary">@color/white_50</item>
+    </style>
+
+    <style name="Theme.BirthChartCalculator" parent="Base.Theme.BirthChartCalculator">
+    </style>
+</resources>

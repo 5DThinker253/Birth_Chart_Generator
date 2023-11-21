@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AstroChart Carta Natal Astrologia</string>
+
+
+    <string name="permission_global_msg">¡Hola! Para que esta aplicación pueda funcionar correctamente, necesitamos tu amable permiso para acceder a ciertos recursos. Esto nos permitirá brindarte la mejor experiencia posible. ¿Podrías concedernos el permiso solicitado? Apreciamos tu colaboración. ¡Gracias!</string>
+    <string name="permission_global_title">Solicitud de Permiso: Por favor, otorga acceso</string>
+
+    <string name="dialog_message_0">¡Estimado usuario!</string>
+    <string name="dialog_message_1">¡Bienvenido a nuestra aplicación de astrología!</string>
+    <string name="dialog_message_2">Queremos agradecerte por ser parte de nuestra comunidad. Al ver los anuncios, estás brindándonos un gran apoyo para continuar desarrollando y manteniendo estas características de forma gratuita para todos los usuarios. Tu apoyo es invaluable y nos inspira a seguir creciendo juntos en este viaje astral. ¡Gracias por ser parte de nuestra app!</string>
+
+
+
+    <!-- fragment_input -->
+    <!-- Título -->
+    <string name="title_birth_data">Generador de Carta Astral</string>
+    <string name="title_gps_coordinates">Coordenadas por GPS</string>
+    <string name="title_city_country_coordinates">Coordenadas por Ciudad y País</string>
+    <string name="title_manual_coordinates">Introducir Coordenadas Manualmente</string>
+
+    <!-- Etiquetas -->
+    <string name="label_name_surname">Nombre y Apellido</string>
+    <string name="label_date_time_birth">Fecha y Hora de Nacimiento</string>
+    <string name="label_geolocation">Geolocalización</string>
+    <string name="label_house_system">Sistema de Casas</string>
+    <string name="label_sidereal_mode">Modo Sideral</string>
+
+    <!-- Indicaciones -->
+    <string name="hint_name_surname">Ingresa tu nombre y apellido</string>
+    <string name="hint_date_time_birth">Selecciona la fecha y hora de nacimiento</string>
+    <string name="hint_coordinates">Las coordenadas se mostrarán aquí</string>
+    <string name="hint_city">Ingresa la ciudad</string>
+    <string name="hint_country">Ingresa el país</string>
+    <string name="hint_latitude">Ingresa la latitud</string>
+    <string name="hint_longitude">Ingresa la longitud</string>
+
+    <!-- Botones de Radio -->
+    <string name="radio_gps">GPS</string>
+    <string name="radio_city_country">Ciudad y País</string>
+    <string name="radio_manual">Manual</string>
+
+    <!-- Mensajes de Información -->
+    <string name="info_location_permission">Permiso de ubicación requerido</string>
+    <string name="info_internet_data">Conexión a Internet requerida</string>
+    <string name="info_coordinate_format">Formato: Grados decimales</string>
+    <string name="info_format_city_country">Ingresa una ubicación en el formato \"Ciudad, País\"</string>
+
+    <string name="generate_chart">Generar Carta</string>
+    <string name="btn_getLocation">Obtener Ubicación</string>
+    <string name="str_datetime_valid">Selecciona una fecha y hora válida</string>
+    <string name="str_datetime_invalid">Formato de fecha y hora inválido</string>
+    <string name="str_invalid_latitud_format">Coordenadas inválidas. Por favor, ingresa una latitud válida dentro del rango de -90 a 90 grados.</string>
+    <string name="str_invalid_latitud_range">Las coordenadas están fuera de límites. Por favor, ingresa una latitud dentro del rango de -90 a 90 grados.</string>
+    <string name="str_invalid_longitud_range">Las coordenadas están fuera de límites. Por favor, ingresa una longitud dentro del rango de -180 a 180 grados.</string>
+    <string name="str_invalid_longitud_format">Coordenadas inválidas. Por favor, ingresa una longitud válida dentro del rango de -180 a 180 grados.</string>
+    <string name="str_permission_location_nogranted">Permiso de ubicación no concedido.</string>
+    <string name="str_location_unavailable">No se pudo obtener la ubicación.</string>
+    <string name="str_gps_disabled">No se pudo obtener la ubicación.</string>
+    <string name="str_fields_required">Todos los campos son obligatorios. Por favor, completa todos los campos.</string>
+    <string name="str_ads_title">Thank you for using our app!</string>
+    <string name="str_ads_msg">By viewing the ads, you are providing me with great support to continue developing and maintaining the features for free for all users of the app. Your support is invaluable and highly appreciated. Thank you for being part of our app!</string>
+    <!-- fragment_input -->
+</resources>

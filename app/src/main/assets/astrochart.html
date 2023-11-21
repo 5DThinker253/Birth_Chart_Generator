@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.34">
+    <title>Radix</title>
+    <style>
+        /* Estilo para la tabla */
+        .body {
+            background-color: rgba(225,228,232,0.78);
+        }
+        #divData{
+            margin-top: 50px;
+            margin-left: 50px;
+
+        }
+        .spanData{
+            background-color: #ffffff;
+
+        }
+        .table {
+            font-family: Arial, sans-serif;
+            width: 50%; /* Ajusta el ancho de la tabla según tus necesidades */
+            height: 50%; /* Ajusta la altura de la tabla según tus necesidades */
+            border-collapse: separate;
+        }
+
+        .table td, .table th {
+            border: 1px solid black;
+        }
+
+        /* Estilo para las celdas de nombre de planeta */
+        .headerClass {
+            background-color: #f1d9c2; /* Color pastel para las celdas de nombre de planeta */
+            text-align: center;
+            font-weight: bold;
+
+        }
+
+        .headerClassRow {
+            background-color: #f0e8d0; /* Color pastel para las celdas de nombre de planeta */
+            text-align: center;
+            font-weight: bold;
+
+        }
+
+        .planetName {
+            background-color: #e8e3db; /* Color pastel para las celdas de nombre de planeta */
+            text-align: center;
+            font-weight: bold;
+
+        }
+
+        .cellAspect {
+            background-color: #e8e3db; /* Color pastel para las celdas de nombre de planeta */
+            font-weight: bold;
+            text-align: center; /* Centra el contenido del glifo */
+
+        }
+
+        .cellGlyph {
+            width: fit-content; /* Ajusta el ancho de las celdas según sea necesario */
+            text-align: center; /* Centra el contenido del glifo */
+            font-weight: bold;
+        }
+
+        /* Estilo para las celdas vacías */
+        .cellEmpty {
+            background-color: transparent;
+            border:none;
+        }
+
+        /* Estilo para las celdas con aspectos */
+        .cellFull {
+            background-color: #d3f0e8; /* Color pastel para las celdas con aspectos */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Estilo para el título del aspecto al pasar el cursor por encima de la celda */
+        .cellFull:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #paper {
+            background: transparent;
+            width: 600px;
+            height: 600px;
+        }
+
+        .export-button {
+            margin-top: 100px;
+            margin-left: 150px;
+            margin-bottom: 150px;
+            width: 150px;
+            height: 60px;
+        }
+        .header {
+            margin-top: 70px;
+            margin-left: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="html2canvas.min.js"></script>
+    <script src="astrochart.js"></script>
+</head>
+<body class="body">
+<div id="bodyDiv" >
+    <div id="divData" class="divData container-fluid" >
+        <div class="row" style="width:fit-content">
+            <table id="tablaDatos" class="table">
+                <tr class="spanData">
+                    <td><span id="name">Name: Person Name</span></td>
+                </tr>
+                <tr class="spanData">
+                    <td><span id="date">Day: 15 Month: 11 Year: 2016 Time: 9:56 [+01:00]</span></td>
+                </tr>
+                <tr class="spanData">
+                    <td><span id="Latitude">Latitude: 48° 51' 20 North</span></td>
+                </tr>
+                <tr class="spanData">
+                    <td><span id="Longitude">Longitude: 16° 02' 56 East</span></td>
+                </tr>
+                <tr class="spanData">
+                    <td><span id="house">Placidus house system</span></td>
+                </tr>
+                <tr class="spanData">
+                    <td><span id="mode">Tropical Mode</span></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="row" style="width:fit-content">
+            <table class="table">
+                <tr>
+                    <th class="col-sm-6 justify-content-start">
+                        <div id="paper"></div>
+                    </th>
+                    <th class="col-sm-6 justify-content-end">
+                        <table id="tablaAspectosInfo" class="table"></table>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" style="width:fit-content">
+            <table class="table">
+                <tr>
+                    <th class="col-sm-8 justify-content-start">
+                        <table id="tablaAspectos" class="table" style="width:fit-content"></table>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row"><table class="table">
+            <tr>
+                <th class="col-sm-6 justify-content-start" >
+                    <table id="tablaAspectosOrbes" class="table" style="width:fit-content"></table>
+                </th>
+                <th class="col-sm-6 justify-content-end" >
+                    <table id="tablePlanets" class="table"></table>
+                </th>
+            </tr>
+        </table>
+        </div>
+    </div>
+</div>
+<button id="exportButtonJPG" class="btn btn-primary export-button">Save in png</button>
+
+<script type="text/javascript"> // Dentro del archivo HTML
+
+
+// Obtener referencias a las tablas
+const ta = document.getElementById("tablaAspectos");
+const tai = document.getElementById("tablaAspectosInfo");
+const tao = document.getElementById("tablaAspectosOrbes");
+const tp = document.getElementById("tablePlanets");
+
+const name = document.getElementById('name');
+const date = document.getElementById('date');
+const Latitude = document.getElementById('Latitude');
+const Longitude = document.getElementById('Longitude');
+const house = document.getElementById('house');
+const mode = document.getElementById('mode');
+
+const btnImage = document.querySelector('#exportButtonJPG');
+btnImage.addEventListener('click', function() {
+    html2canvas(document.getElementById("bodyDiv")).then(function(canvas) {
+        // Solicitar confirmación al usuario
+        if (confirm('¿Deseas guardar la imagen?')) {
+            var imgData = canvas.toDataURL('image/png');
+            if (window.AndroidInterface && typeof window.AndroidInterface.saveImage === 'function') {
+                window.AndroidInterface.saveImage(imgData);
+            } else {
+                const link = document.createElement("a");
+                link.href = imgData;
+                link.download = "captura.png";
+                link.click();
+            }
+            btnImage.disabled = true;
+        } else {
+            btnImage.disabled = false;
+            window.alert('Se cancelo la operacion');
+        }
+
+    });
+});
+
+const orderPlanet = ["Sun", "Moon", "Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "NNode", "Lilith", "Chiron"];
+
+function newAspects(aspectList, orderPlanet) {
+    const newStructure = [];
+    for (let j = 0; j < aspectList.length; j++) {
+        const name = aspectList[j].point.name /*+"to"+aspectList[j].toPoint.name*/;
+        newStructure[j] = {
+            planet: name,
+            data: {
+                "aspect": aspectList[j].aspect,
+                "point": aspectList[j].point,
+                "toPoint": aspectList[j].toPoint,
+                "precision": aspectList[j].precision
+            }
+        };
+    }
+
+    const newAspect = [];
+    const noExist = [];
+    let newIndex = 0;
+    for (let q = 0; q < orderPlanet.length; q++) {
+        let planetexist = false;
+        for (let w = 0; w < newStructure.length; w++) {
+            if (newStructure[w].planet === orderPlanet[q] &&
+                newStructure[w].data.point.name === orderPlanet[q] &&
+                newStructure[w].data.toPoint.name !== orderPlanet[q]) {
+                planetexist = true;
+                newAspect[newIndex] = {
+                    "aspect": newStructure[w].data.aspect,
+                    "point": newStructure[w].data.point,
+                    "toPoint": newStructure[w].data.toPoint,
+                    "precision": newStructure[w].data.precision
+                };
+                newIndex++;
+            }
+        }
+    }
+    return newAspect;
+}
+function generarTablaPlanetas(planetas, tablePlanets) {
+    const table = tablePlanets;
+
+    // Crear la fila de encabezado
+    const headerRow = document.createElement("tr");
+    const th = document.createElement("th");
+    th.textContent = "Planets Info";
+    th.setAttribute("colspan", "3"); // Establecer el atributo colSpan en 3 para abarcar las 3 columnas
+    headerRow.appendChild(th);
+    headerRow.classList.add("headerClass"); // Agregar la clase CSS "headerClass" para aplicar estilos
+    table.appendChild(headerRow);
+
+    for (const planeta in planetas) {
+        const fila = document.createElement("tr");
+
+        const celdaPlaneta = document.createElement("td");
+        celdaPlaneta.textContent = planeta;
+        celdaPlaneta.classList.add("planetName"); // Agregar la clase CSS "headerClass" para aplicar estilos
+
+        const celdaLongitud = document.createElement("td");
+        celdaLongitud.textContent = convertirADMS(planetas[planeta][0]);
+
+        const celdaVelocidad = document.createElement("td");
+        celdaVelocidad.textContent = (planetas[planeta][2] < 0 ? " R" : " E");
+        if (planetas[planeta][2] < 0) {
+            celdaVelocidad.style.backgroundColor = "#f8172d";
+        } else {
+            celdaVelocidad.style.backgroundColor = "#4c5bff";
+        }
+
+        fila.appendChild(celdaPlaneta);
+        fila.appendChild(celdaLongitud);
+        fila.appendChild(celdaVelocidad);
+
+        table.appendChild(fila);
+    }
+}
+function generarTablaAspectosOrbes(tablaAspectosOrbes, datos) {
+    // Obtener la referencia del elemento de la tabla
+    const table = tablaAspectosOrbes;
+
+    // Crear la fila de encabezado
+    const headerRow = document.createElement("tr");
+    const th1 = document.createElement("th");
+    const th2 = document.createElement("th");
+    const th3 = document.createElement("th");
+    const th4 = document.createElement("th");
+    th1.textContent = "Planet";
+    th2.textContent = "Aspect";
+    th3.textContent = "Planet";
+    th4.textContent = "Orbs";
+    headerRow.appendChild(th1);
+    headerRow.appendChild(th2);
+    headerRow.appendChild(th3);
+    headerRow.appendChild(th4);
+    headerRow.classList.add("headerClass"); // Agregar la clase CSS "headerClass" para aplicar estilos
+    table.appendChild(headerRow);
+
+    // Crear un conjunto para realizar un seguimiento de las combinaciones únicas
+    const combinacionesUnicas = new Set();
+
+    // Crear las filas y celdas para cada dato en el array
+    datos.forEach((dato) => {
+        const combinacionActual = dato.point.name + "-" + dato.toPoint.name;
+        const combinacionInversa = dato.toPoint.name + "-" + dato.point.name;
+
+        // Verificar si la combinación actual o su inversa ya existe
+        if (!combinacionesUnicas.has(combinacionActual) && !combinacionesUnicas.has(combinacionInversa)) {
+            combinacionesUnicas.add(combinacionActual); // Agregar la combinación actual al conjunto
+
+            const fila = document.createElement("tr");
+            const celdaPlaneta1 = document.createElement("td");
+            const celdaAspecto = document.createElement("td");
+            const celdaPlaneta2 = document.createElement("td");
+            const celdaOrbes = document.createElement("td");
+
+            celdaPlaneta1.textContent = dato.point.name;
+            celdaPlaneta1.classList.add("planetName"); // Agregar la clase CSS "headerClass" para aplicar estilos
+            celdaAspecto.textContent = obtenerGlifo(dato.aspect.name) + " - " + dato.aspect.name;
+            celdaAspecto.style.backgroundColor = dato.aspect.color;
+            celdaPlaneta2.textContent = dato.toPoint.name;
+            celdaPlaneta2.classList.add("planetName"); // Agregar la clase CSS "headerClass" para aplicar estilos
+            const valorRedondeado = Math.round(dato.precision * 100) / 100; // Redondear a dos decimales
+            const valorFormateado = valorRedondeado.toFixed(2); // Limitar a dos decimales
+            celdaOrbes.textContent = `${valorFormateado}°`;
+
+            fila.appendChild(celdaPlaneta1);
+            fila.appendChild(celdaAspecto);
+            fila.appendChild(celdaPlaneta2);
+            fila.appendChild(celdaOrbes);
+            table.appendChild(fila);
+        }
+    });
+}
+
+function generarTablaAspectos(newAspect, orderPlanet, tablaAspectos) {
+
+
+    let celda;
+
+    // Crear la primera fila con los nombres de los planetas
+    const planetas = orderPlanet;
+    /*const primeraFila = tablaAspectos.insertRow();
+    primeraFila.classList.add("headerClass"); // Agregar la clase CSS "headerClass" para aplicar estilos
+    primeraFila.insertCell(); // Celda vacía en la esquina superior izquierda
+
+    for (let j = 0; j < planetas.length; j++) {
+        const planeta = planetas[j];
+        celda = primeraFila.insertCell();
+        celda.classList.add("headerClass"); // Agregar la clase CSS "headerClass" para aplicar estilos
+        celda.innerHTML = planeta;
+    }*/
+
+    const numPLanet = planetas.length - 1;
+    // Crear las filas y celdas para los aspectos entre planetas
+    for (let i = 0; i < planetas.length; i++) {
+
+        const planeta1 = planetas[i];
+        const fila = tablaAspectos.insertRow();
+
+        // Primera columna con el nombre del planeta
+        celda = fila.insertCell();
+        celda.classList.add("headerClassRow"); // Agregar la clase CSS "headerClass" para aplicar estilos
+        if (planeta1 !== "Sun") {
+            celda.innerHTML = planeta1;
+        }
+
+        for (let j = 0; j < planetas.length; j++) {
+            const planeta2 = planetas[j];
+            if ( i >= j) {
+                // Deja la celda vacía si es la primera fila/columna, si i >= j o si planeta1 es igual a planeta2
+
+                celda = fila.insertCell();
+            }
+
+            if ( i === j || planeta1 === planeta2) {
+                if (i === numPLanet) {
+
+                } else {
+                    celda.classList.add("headerClassRow"); // Agregar la clase CSS "headerClass" para aplicar estilos
+                    celda.innerHTML = planeta2;
+                    console.log(planeta2 + " i " + i + " planetas " + planetas.length)
+                }
+            }
+            if ( i <= j || planeta1 === planeta2) {
+                // Deja la celda vacía si es la primera fila/columna, si i >= j o si planeta1 es igual a planeta2
+                continue;
+            }
+
+            // Calcular el aspecto entre los dos planetas
+            let aspecto = "";
+            let aspectoColor = "";
+            if (planeta1 !== planeta2) {
+                aspecto = obtenerAspecto(planeta1, planeta2, newAspect);
+                aspectoColor = obtenerAspectoColor(planeta1, planeta2, newAspect);
+            }
+            if (aspecto !== "") {
+                celda.innerHTML = obtenerGlifo(aspecto);
+                celda.setAttribute("title", aspecto); // Agregar el título con el nombre completo del aspecto
+                celda.classList.add("cellFull"); // Agregar la clase CSS "headerClass" para aplicar estilos
+                celda.style.backgroundColor = aspectoColor;
+            }
+        }
+    }
+}
+function generarTablaAspectosInfo(tablaAspectosInfo) {
+    // Obtener la referencia del elemento de la tabla
+
+    // Crear la fila de encabezado
+    const headerRow = document.createElement("tr");
+    const th1 = document.createElement("th");
+    const th2 = document.createElement("th");
+    th1.textContent = "Aspects";
+    th2.textContent = "Glypho / Color";
+    headerRow.appendChild(th1);
+    headerRow.appendChild(th2);
+    headerRow.classList.add("headerClass"); // Agregar la clase CSS "headerClass" para aplicar estilos
+    tablaAspectosInfo.appendChild(headerRow);
+
+    // Definir los aspectos y sus propiedades
+    const aspectos = astrology.ASPECTS;
+
+    // Crear las filas y celdas para cada aspecto
+    for (const aspecto in aspectos) {
+        const fila = document.createElement("tr");
+        const celdaAspecto = document.createElement("td");
+        const celdaGlifo = document.createElement("td");
+
+        celdaAspecto.classList.add("cellAspect"); // Agregar la clase CSS "headerClass" para aplicar estilos
+        celdaAspecto.textContent = obtenerTextoDescriptivo(aspecto);
+
+        const glifo = obtenerGlifo(aspecto);
+        if (glifo !== "") {
+            const spanGlifo = document.createElement("span");
+            spanGlifo.textContent = glifo;
+            spanGlifo.classList.add("glifoClass"); // Agregar la clase CSS "glifoClass" para aplicar estilos
+            celdaGlifo.appendChild(spanGlifo);
+            celdaGlifo.style.backgroundColor = aspectos[aspecto].color;
+            celdaAspecto.classList.add("cellGlyph"); // Agregar la clase CSS "headerClass" para aplicar estilos
+        }
+
+        fila.appendChild(celdaAspecto);
+        fila.appendChild(celdaGlifo);
+        if (obtenerGlifo(aspecto) !== "") {
+            tablaAspectosInfo.appendChild(fila);
+        }
+    }
+}
+function obtenerAspecto(planet1, planet2, newAspect) {
+    for (let k = 0; k < newAspect.length; k++) {
+        const aspect = newAspect[k].aspect.name;
+        const pointName = newAspect[k].point.name;
+        const toPointName = newAspect[k].toPoint.name;
+
+        if ((pointName === planet1 && toPointName === planet2) && (planet1 !== planet2)) {
+            return aspect;
+        }
+    }
+
+    return null;
+}
+function obtenerAspectoColor(planet1, planet2, newAspect) {
+    for (let k = 0; k < newAspect.length; k++) {
+        const aspect = newAspect[k].aspect.color;
+        const pointName = newAspect[k].point.name;
+        const toPointName = newAspect[k].toPoint.name;
+
+        if ((pointName === planet1 && toPointName === planet2) && (planet1 !== planet2)) {
+            return aspect;
+        }
+    }
+
+    return null;
+}
+function obtenerTextoDescriptivo(aspecto) {
+    switch (aspecto) {
+        case "conjunction":
+            return "Conjunction (Conjunción)";
+        case "square":
+            return "Square (Cuadratura)";
+        case "trine":
+            return "Trine (Trígono)";
+        case "opposition":
+            return "Opposition (Oposición)";
+        case "sextile":
+            return "Sextile (Sextil)";
+        case "semi-sextile":
+            return "Semi-Sextile (Semi-Sextil)";
+        case "semi-square":
+            return "Semi-Square (Semi-Cuadratura)";
+        case "sesquiquadrate":
+            return "Sesquiquadrate (Sesquiscuadrado)";
+        case "quincunx":
+            return "Quincunx (Quincuncio)";
+        default:
+            return "";
+    }
+}
+function obtenerGlifo(aspecto) {
+    switch (aspecto) {
+        case "conjunction":
+            return "☌";
+        case "square":
+            return "□";
+        case "trine":
+            return "△";
+        case "opposition":
+            return "☍";
+        case "sextile":
+            return "⚹";
+        case "semi-sextile":
+            return "⚺";
+        case "semi-square":
+            return "⚼";
+        case "sesquiquadrate":
+            return "⚿";
+        case "quincunx":
+            return "☌☍";
+        default:
+            return "";
+    }
+}
+function obtenerGlifoAspecto(nombreAspecto) {
+    switch (nombreAspecto) {
+        case "conjunction":
+            return "&#x260C;"; // Glifo Unicode para Conjunction
+        case "opposition":
+            return "&#x260D;"; // Glifo Unicode para Opposition
+        case "trine":
+            return "&#x25B3;"; // Glifo Unicode para Trine
+        case "square":
+            return "&#x25A1;"; // Glifo Unicode para Square
+        case "sextile":
+            return "&#x2699;"; // Glifo Unicode para Square
+        case "semi-sextile":
+            return "&#x26BA;"; // Glifo Unicode para Square
+        case "semi-square":
+            return "&#x26BC;"; // Glifo Unicode para Square
+        case "sesquiquadrate":
+            return "&#x26BF;"; // Glifo Unicode para Square
+        case "quincunx":
+            return "&#x260C;&#x260D;"; // Glifo Unicode para Square
+        // Agrega casos para los demás aspectos...
+        default:
+            return "";
+    }
+}
+function ordenarPlanetas(planetas, ordenSistemaSolar) {
+    return Object.fromEntries(
+        Object.entries(planetas)
+            .sort((a, b) => ordenSistemaSolar.indexOf(a[0]) - ordenSistemaSolar.indexOf(b[0]))
+    );
+}
+function convertirADMS(grados) {
+    let d = grados + 0.5 / 3600. / 10000.;
+    let deg = parseInt(d);
+    d = (d - deg) * 60;
+    let min = parseInt(d);
+    d = (d - min) * 60;
+    let sec = parseInt(d);
+
+    return deg + "° " + min + "' " + sec;
+}
+
+</script>
+</body>
+</html>

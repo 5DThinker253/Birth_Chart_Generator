@@ -1,0 +1,171 @@
+<resources>
+    <string name="app_name">AstroChart</string>
+
+    <string name="dialog_message_0">!¡Querido usuario!</string>
+    <string name="dialog_message_1">¡Bienvenido a nuestra aplicación de astrología!</string>
+    <string name="dialog_message_2">Queremos agradecerte por ser parte de nuestra comunidad. Al ver los anuncios, nos brinda un gran apoyo para continuar desarrollando y manteniendo estas funciones de forma gratuita para todos los usuarios. Tu apoyo es invaluable y nos inspira a seguir creciendo juntos en este viaje astral. ¡Gracias por ser parte de nuestra aplicación!</string>
+
+    <string name="str_admob_fail">Hay un problema con la red de anuncios.</string>
+    <string name="str_mandatory_update">Actualización Obligatoria</string>
+    <string name="update_mandatory_content">Hay una nueva actualización obligatoria. actualice su aplicación para continuar usándola.</string>
+    <string name="str_normal_update">Nueva actualización</string>
+    <string name="update_normal_content">Hay una nueva actualización disponible. actualice su aplicación para disfrutar de más funciones.</string>
+    <string name="str_btn_update">Actualizar</string>
+    <string name="str_btn_later">Más tarde</string>
+
+    <string name="mandatory_field">Este campo es obligatorio</string>
+    <string name="mandatory_fields">Todos los campos son obligatorios</string>
+
+    <string name="str_size">\"Tamaño: \"</string>
+
+    <!-- support -->
+
+    <string name="tv_info_support">\"Para tener un mejor soporte, he activado varios canales directos para brindarte un soporte de calidad y atenderte lo más rápido posible con cualquier inconveniente que puedas tener\".</string>
+    <string name="str_wsInstall">Whatsapp no instalado</string>
+    <string name="str_tgInstall">telegrama no instalado</string>
+    <string name="btn_support">Soporte técnico</string>
+
+<!-- eclipse -->
+
+    <string name="str_solar_and_lunar_eclipses">Eclipses solares y lunares</string>
+    <string name="str_next_solar_eclipse">Próximo eclipse solar:</string>
+    <string name="str_type_of_solar_eclipse">Tipo de eclipse solar:</string>
+    <string name="str_eclipse_latitude">Latitud:</string>
+    <string name="str_eclipse_longitude">Longitud:</string>
+    <string name="str_search_by_year">Buscar por año</string>
+    <string name="str_enter_the_year_to_look_for">Introduzca el año a buscar:</string>
+    <string name="str_global_solar_eclipses">Eclipses solares globales</string>
+    <string name="str_local_solar_eclipses">Eclipses solares locales</string>
+    <string name="str_lunar_eclipses">eclipses lunares</string>
+    <string name="str_eclipse">Buscar eclipses</string>
+    <string name="str_eclipse_magnitude">Magnitud del eclipse:</string>
+    <string name="str_eclipse_distance">Distancia:</string>
+    <string name="str_eclipse_date_time">Fecha y hora:</string>
+    <string name="str_eclipse_type">Tipo de eclipse:</string>
+    <string name="str_eclipse_total_duration">Duración total:</string>
+    <string name="str_eclipse_partial_duration">Duración parcial:</string>
+    <string name="str_eclipse_penumbral_duration">Duración de la penumbra:</string>
+
+    <!-- mooonphase -->
+
+    <string name="str_newMoon">Luna nueva</string>
+    <string name="str_waxingCrescent">Luna creciente</string>
+    <string name="str_waxingQuarter">Cuarto creciente</string>
+    <string name="str_waxingGibbous">Gibosa creciente</string>
+    <string name="str_fullMoon">Luna llena</string>
+    <string name="str_waningGibbous">Gibosa menguante</string>
+    <string name="str_waningQuarter">Cuarto menguante</string>
+    <string name="str_waningCrescent">Luna menguante</string>
+
+    <!-- moonphase calculator layout -->
+
+    <string name="str_SelDate">Primero debes seleccionar una fecha</string>
+    <string name="str_infoMoonPhaseDate">Comprobar la fase lunar por día</string>
+    <string name="str_infoSelect">Seleccione fecha</string>
+    <string name="str_infoSelectTime">Seleccionar hora</string>
+    <string name="str_distance">Distancia</string>
+    <string name="str_ilumination">Visibilidad</string>
+    <string name="str_moonAge">Edad</string>
+    <string name="str_moonAgePerc">% Edad</string>
+    <string name="str_morning">Hora dorada de la mañana</string>
+    <string name="str_evening">Hora dorada de la tarde</string>
+    <string name="str_goldenHourStart">Comenzar</string>
+    <string name="str_goldenHourEnd">Fin</string>
+    <string name="str_Timemoonrise">Moonrise</string>
+    <string name="str_Timemoonset">Moonset</string>
+    <string name="day">Día</string>
+    <string name="normal">Normal</string>
+    <string name="superMoon">Super Moon</string>
+    <string name="microMoon">Micro Moon</string>
+    <string name="str_TimeSunrise">Sunrise</string>
+    <string name="str_TimeSunset">Sunset</string>
+    <string name="btn_getmoonPhase">Obtener fase lunar</string>
+
+
+    <string name="lbl_soon">pronto</string>
+    <string name="lbl_news">Nuevos cambios</string>
+    <string name="lbl_news_0">Nuevos fondos de pantalla fondo paisaje cartera</string>
+    <string name="lbl_news_1">Nuevas imágenes de la luna en % de la fase lunar, para usuarios VIP y Ads.</string>
+    <string name="lbl_news_2">Nuevas notificaciones de fases lunares y próximos eclipses que ocurrirán unos días antes.</string>
+    <string name="lbl_news_3">Nueva función, consulta de eclipses solares y lunares por fecha y lugar.</string>
+
+    <!--Rate it Dialog-->
+    <string name="rate_never">Nunca</string>
+    <string name="rate_remind_later">Recuérdame más tarde</string>
+    <string name="rate_positive">Puntúalo</string>
+    <string name="rate_message">Si te ha gustado esta aplicación, califícanos y danos tu opinión.</string>
+    <string name="rate_title">Califica esta aplicación</string>
+
+    <string name="never_show">Nunca</string>
+
+    <string name="permission_global_msg">¡Hola! Para que esta aplicación funcione correctamente, le solicitamos amablemente su permiso para acceder a ciertos recursos. Esto nos permitirá brindarle la mejor experiencia posible. ¿Podría por favor concedernos el permiso solicitado\? Apreciamos tu cooperación. ¡Gracias!</string>
+    <string name="permission_global_title">Solicitud de permiso: conceder acceso</string>
+
+    <string name="location_unable_to_geocode">No se puede decodificar su ubicación. ¿quizás su red no está disponible\?</string>
+    <string name="location_not_found_title" >Lo siento</string>
+    <string name="location_not_found" >%s no encontrado.</string>
+
+    <!-- fragment_input -->
+
+    <!-- Title -->
+    <string name="title_birth_data">Generador de cartas natales</string>
+    <string name="title_gps_coordinates">Coordenadas GPS</string>
+    <string name="title_city_country_coordinates">Coordenadas de ciudad y país</string>
+    <string name="title_manual_coordinates">Introducir coordenadas manualmente</string>
+
+    <!-- Labels -->
+    <string name="label_name_surname">Nombre y apellido</string>
+    <string name="label_date_time_birth">Fecha y hora de nacimiento</string>
+    <string name="label_geolocation">Geolocalización</string>
+    <string name="label_house_system">Sistema de la casa</string>
+    <string name="label_sidereal_mode">Modo sideral</string>
+
+    <!-- Hints -->
+    <string name="hint_name_surname">Introduce tu nombre y apellido</string>
+    <string name="hint_date_time_birth">Selecciona fecha y hora de nacimiento</string>
+    <string name="hint_date_time_birth_timezone">Seleccione la zona horaria</string>
+    <string name="hint_date_time_birth_timezone_auto_chb">Zona horaria manual</string>
+    <string name="hint_date_time_birth_timezone_auto">Zona horaria desde la ubicación</string>
+    <string name="hint_coordinates">Las coordenadas se mostrarán aquí.</string>
+    <string name="hint_city">Introduce la ciudad</string>
+    <string name="hint_country">Introduce el país</string>
+    <string name="hint_latitude">Introduce la latitud</string>
+    <string name="hint_longitude">Introduce la longitud</string>
+
+    <!-- Radio Buttons -->
+    <string name="radio_gps">GPS</string>
+    <string name="radio_city_country">Ciudad y país</string>
+    <string name="radio_manual">Manual</string>
+
+    <!-- Information Messages -->
+    <string name="info_location_permission">Se requiere permiso de ubicación</string>
+    <string name="info_internet_data">requiere conexión a Internet</string>
+    <string name="info_coordinate_format">Formato: Grados decimales</string>
+    <string name="info_format_city_country">Ingrese una ubicación en el formato \\"Ciudad, País\\"</string>
+
+    <string name="generate_chart">Generar gráfico</string>
+    <string name="btn_getLocation">Obtener ubicación</string>
+    <string name="str_datetime_valid">Seleccionar fecha y hora válida</string>
+    <string name="str_datetime_invalid">Formato de fecha y hora no válido</string>
+    <string name="str_invalid_latitud_format">Formato de coordenadas latitud no válidas.</string>
+    <string name="str_invalid_latitud_range">Las coordenadas están fuera de los límites. Ingrese la latitud dentro del rango de -90 a 90 grados</string>
+    <string name="str_invalid_longitud_range">Las coordenadas están fuera de los límites. Ingrese la latitud dentro del rango de -180 a 180 grados.</string>
+    <string name="str_invalid_longitud_format">Formato de coordenadas longitud no válidas.</string>
+    <string name="str_permission_location_nogranted">Permiso de ubicación no concedido.</string>
+    <string name="str_location_unavailable">No se pudo obtener la ubicación.</string>
+    <string name="str_gps_disabled">No se pudo obtener la ubicación.</string>
+    <string name="str_fields_required">Todos los campos son obligatorios. Porfavor llene todos los campos.</string>
+    <string name="btn_ok">Ok</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="more">Más</string>
+    <string name="support">Soporte</string>
+    <string name="share">Compartir</string>
+    <string name="eclipse_explorer">Explorador de eclipses</string>
+    <string name="moonphase_calculator">Calculadora de fase lunar</string>
+    <string name="moon_calendar">Calendario lunar</string>
+    <string name="birthchart_generator">Generador de cartas natales</string>
+    <string name="str_birthchart_calulate">¡Gracias por usar nuestra aplicación! Al ver los anuncios, me brinda un gran apoyo para continuar desarrollando y manteniendo las funciones de forma gratuita para todos los usuarios de la aplicación. Su apoyo es invaluable y muy apreciado. ¡Gracias por ser parte de nuestra aplicación!</string>
+    <string name="str_ads_title">¡Gracias por usar nuestra aplicación!</string>
+    <string name="str_ads_msg">Al ver los anuncios, me brinda un gran apoyo para continuar desarrollando y manteniendo las funciones de forma gratuita para todos los usuarios de la aplicación. Su apoyo es invaluable y muy apreciado. ¡Gracias por ser parte de nuestra aplicación!</string>
+    <!-- fragment_input -->
+</resources>

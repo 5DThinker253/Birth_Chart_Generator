@@ -1,0 +1,489 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".fragments.fragment_input">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".05"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/HeaderText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".4"
+            android:text="@string/label_type_chart"
+            android:textAlignment="textEnd" />
+
+        <Spinner
+            android:id="@+id/sp_saved_data"
+            style="?android:attr/spinnerDropDownItemStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:minHeight="48dp" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Título -->
+            <TextView
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:text="@string/title_birth_data" />
+
+            <!-- Nombre y Apellido
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_name_surname"
+                style="@style/HeaderText" /> -->
+            <EditText
+                android:id="@+id/nameSurnameEditText"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="Name Surname"
+                android:hint="@string/hint_name_surname"
+                android:inputType="text"
+                android:minHeight="48dp" />
+
+            <!-- Fecha y Hora de Nacimiento
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_date_time_birth"
+                style="@style/HeaderText" /> -->
+            <com.google.android.material.divider.MaterialDivider style="@style/DividerStyle" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    style="@style/HeaderText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".4"
+                    android:text="@string/label_type_chart"
+                    android:textAlignment="textEnd" />
+
+                <Spinner
+                    android:id="@+id/sp_type_chart"
+                    style="?android:attr/spinnerDropDownItemStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:minHeight="48dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+                <com.google.android.material.divider.MaterialDivider style="@style/DividerStyle2" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+                        <EditText
+                            android:id="@+id/dateOfBirthEditText"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="datetime"
+                            android:focusable="false"
+                            android:hint="@string/hint_date_time_birth"
+                            android:inputType="datetime"
+                            android:minHeight="48dp"
+                            android:paddingEnd="5dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_second_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <EditText
+                            android:id="@+id/dateOfBirthEditText2"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="datetime"
+                            android:focusable="false"
+                            android:hint="@string/hint_date_time_birth"
+                            android:inputType="datetime"
+                            android:minHeight="48dp"
+                            android:paddingEnd="5dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider style="@style/DividerStyle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/HeaderText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:maxLines="1"
+                        android:text="@string/label_geolocation"
+                        android:textAlignment="textEnd" />
+
+                    <Spinner
+                        android:id="@+id/sp_geolocation"
+                        style="?android:attr/spinnerDropDownItemStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:minHeight="48dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".3"
+                        android:maxLines="1"
+                        android:text="@string/label_coordinates"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/coordinatesTextView"
+                        style="@style/BodyText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".7"
+                        android:maxLines="1"
+                        android:textAlignment="textStart"
+                        android:hint="@string/hint_coordinates" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Coordenadas por GPS -->
+            <LinearLayout
+                android:id="@+id/gpsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.divider.MaterialDivider style="@style/DividerStyle2" />
+
+                <TextView
+                    style="@style/HeaderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_gps_coordinates" />
+                <Button
+                    android:id="@+id/btn_getGPSLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_getLocation" />
+
+                <TextView
+                    style="@style/InfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info_location_permission" />
+            </LinearLayout>
+            <!-- Coordenadas por Ciudad y País -->
+            <LinearLayout
+                android:id="@+id/cityCountryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.divider.MaterialDivider style="@style/DividerStyle2" />
+
+                <TextView
+                    style="@style/HeaderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_city_country_coordinates" />
+
+                <TextView
+                    style="@style/InfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info_format_city_country" />
+
+                <EditText
+                    android:id="@+id/cityEditText"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="addressCity"
+                    android:hint="@string/hint_city"
+                    android:inputType="textAutoComplete" />
+
+                <Button
+                    android:id="@+id/btn_getCityLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_getLocation" />
+
+                <TextView
+                    style="@style/InfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info_internet_data" />
+            </LinearLayout>
+            <!-- Introducir Coordenadas Manualmente -->
+            <LinearLayout
+                android:id="@+id/manualLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.divider.MaterialDivider style="@style/DividerStyle2" />
+
+                <TextView
+                    style="@style/HeaderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_manual_coordinates" />
+
+                <EditText
+                    android:id="@+id/latitudeEditText"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="latitude"
+                    android:hint="@string/hint_latitude"
+                    android:inputType="numberDecimal|numberSigned" />
+
+                <EditText
+                    android:id="@+id/longitudeEditText"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="longitude"
+                    android:hint="@string/hint_longitude"
+                    android:inputType="numberDecimal|numberSigned" />
+
+                <TextView
+                    style="@style/InfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info_coordinate_format" />
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider style="@style/DividerStyle" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    style="@style/HeaderText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".4"
+                    android:text="@string/label_type_tmz"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_tmz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+                <com.google.android.material.divider.MaterialDivider
+                    style="@style/DividerStyle2" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+                        <CheckBox
+                            android:id="@+id/chb_auto_tmz"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/hint_date_time_birth_timezone_auto_chb"
+                            style="@style/CheckStyle"/>
+
+                        <TextView
+                            android:id="@+id/timezoneTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="5dp"
+                            style="@style/TextViewStyle"
+                            android:hint="@string/hint_date_time_birth_timezone_auto"/>
+                        <EditText
+                            android:id="@+id/timezoneEditText"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="datetime"
+                            android:hint="@string/hint_date_time_birth_timezone"
+                            android:inputType="datetime"
+                            android:minHeight="48dp"
+                            android:paddingStart="5dp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_second_tmz"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+                        <CheckBox
+                            android:id="@+id/chb_auto_tmz2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/hint_date_time_birth_timezone_auto_chb"
+                            style="@style/CheckStyle"/>
+
+                        <TextView
+                            android:id="@+id/timezoneTextView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="5dp"
+                            style="@style/TextViewStyle"
+                            android:hint="@string/hint_date_time_birth_timezone_auto"/>
+
+                        <EditText
+                            android:id="@+id/timezoneEditText2"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="datetime"
+                            android:hint="@string/hint_date_time_birth_timezone"
+                            android:inputType="datetime"
+                            android:minHeight="48dp"
+                            android:paddingStart="5dp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider style="@style/DividerStyle" />
+            <!-- Lista de Sistema de Casas -->
+            <TextView
+                style="@style/HeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_house_system" />
+
+            <Spinner
+                android:id="@+id/houseSystemSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/house_system_options"
+                android:fontFamily="sans-serif"
+                android:minHeight="48dp" />
+
+            <!-- Lista de Modos Siderales -->
+
+            <LinearLayout
+                android:id="@+id/siderealLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/HeaderText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_sidereal_mode" />
+
+                <Spinner
+                    android:id="@+id/siderealModeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/sidereal_mode_options"
+                    android:fontFamily="sans-serif"
+                    android:minHeight="48dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_makeChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/dark_blue_0"
+                    android:text="@string/generate_chart" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".15"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-8077301805868229/8278389507" />
+
+</LinearLayout>

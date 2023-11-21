@@ -1,0 +1,207 @@
+<resources>
+    <string name="app_name">AstroChart</string>
+
+    <string name="todo"  translatable="false">todo</string>
+    <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+    <string name="ad_app_id_debug" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="ad_banner_id_debug" translatable="false">/6499/example/banner</string>
+    <string name="ad_interstitial_debug" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ad_interstitial_recompensado_debug" translatable="false">ca-app-pub-3940256099942544/5354046379</string>
+    <string name="ad_Videos_recompensado_debug" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="ad_openWindows_debug" translatable="false">ca-app-pub-3940256099942544/3419835294</string>
+
+    <string name="ad_app_id" translatable="false">ca-app-pub-8077301805868229~3217634516</string>
+    <string name="ad_banner_id_release" translatable="false">ca-app-pub-8077301805868229/8278389507</string>
+    <string name="ad_interstitial_release" translatable="false">ca-app-pub-8077301805868229/6394462197</string>
+    <string name="ad_interstitial_recompensado_release" translatable="false">ca-app-pub-8077301805868229/3107638087</string>
+    <string name="ad_Videos_recompensado_release" translatable="false">ca-app-pub-8077301805868229/1301099378</string>
+    <string name="ad_openWindows_release" translatable="false">ca-app-pub-8077301805868229/9561365796</string>
+
+    <string name="default_notification_channel_id" translatable="false">default_notification_channel_id</string>
+    <string name="channel_notification_desc" translatable="false">Normal Notification</string>
+
+    <string name="dialog_message_0">!Dear User!</string>
+    <string name="dialog_message_1">!Welcome to our astrology app!</string>
+    <string name="dialog_message_2">We want to thank you for being part of our community. By viewing the ads, you are providing us with great support to continue developing and maintaining these features for free for all users. Your support is invaluable and inspires us to keep growing together on this astral journey. Thank you for being part of our app!</string>
+
+    <string name="str_admob_fail">There is an issue with ads network.</string>
+    <string name="str_mandatory_update">Mandatory Update</string>
+    <string name="update_mandatory_content">There is a new mandatory update. please update your app to continue using app.</string>
+    <string name="str_normal_update">New update</string>
+    <string name="update_normal_content">There is a new update available. please update your app to enjoy more features.</string>
+    <string name="str_btn_update">Update</string>
+    <string name="str_btn_later">Later</string>
+
+    <string name="mandatory_field">This field is mandatory</string>
+    <string name="mandatory_fields">All fields is mandatory</string>
+
+    <string name="str_size">"Size: "</string>
+
+    <!-- support -->
+
+    <string name="tv_info_support">"In order to have better support, I have activated several direct channels to provide you with quality support and assist you as quickly as possible with any inconvenience you may have. "</string>
+    <string name="str_wsInstall">Whatsapp not installed</string>
+    <string name="str_tgInstall">Telegram not installed</string>
+    <string name="btn_support">Technical Support</string>
+
+<!-- eclipse -->
+
+    <string name="str_solar_and_lunar_eclipses">Solar and lunar eclipses</string>
+    <string name="str_next_solar_eclipse">Next solar eclipse:</string>
+    <string name="str_type_of_solar_eclipse">Type of solar eclipse:</string>
+    <string name="str_eclipse_latitude">Latitude: </string>
+    <string name="str_eclipse_longitude">Longitude: </string>
+    <string name="str_search_by_year">Search by year</string>
+    <string name="str_enter_the_year_to_look_for">Enter the year to look for:</string>
+    <string name="str_global_solar_eclipses">Global solar eclipses</string>
+    <string name="str_local_solar_eclipses">Local solar eclipses</string>
+    <string name="str_lunar_eclipses">Lunar eclipses</string>
+    <string name="str_eclipse">Search eclipses</string>
+    <string name="str_eclipse_magnitude">Eclipse Magnitude:</string>
+    <string name="str_eclipse_distance">Distance:</string>
+    <string name="str_eclipse_date_time">Date Time:</string>
+    <string name="str_eclipse_type">Eclipse Type:</string>
+    <string name="str_eclipse_total_duration">Total Duration:</string>
+    <string name="str_eclipse_partial_duration">Partial Duration:</string>
+    <string name="str_eclipse_penumbral_duration">Penumbra Duration:</string>
+
+    <!-- mooonphase -->
+
+    <string name="str_newMoon">New Moon</string>
+    <string name="str_waxingCrescent">Waxing Crescent</string>
+    <string name="str_waxingQuarter">Waxing Quarter</string>
+    <string name="str_waxingGibbous">Waxing Gibbous</string>
+    <string name="str_fullMoon">Full Moon</string>
+    <string name="str_waningGibbous">Waning Gibbous</string>
+    <string name="str_waningQuarter">Waning Quarter</string>
+    <string name="str_waningCrescent">Waning Crescent</string>
+
+    <!-- moonphase calculator layout -->
+
+    <string name="str_SelDate">First you must select a date</string>
+    <string name="str_infoMoonPhaseDate">Check moon phase by day</string>
+    <string name="str_infoSelect">Select date</string>
+    <string name="str_dateFormat" translatable="false">dd/mm/yyyy</string>
+    <string name="str_timeFormat" translatable="false">HH:mm</string>
+    <string name="str_infoSelectTime">Select Time</string>
+    <string name="str_distance">Distance</string>
+    <string name="str_ilumination">Visibility</string>
+    <string name="str_moonAge">Age</string>
+    <string name="str_moonAgePerc">% Age</string>
+    <string name="str_morning">Morning Golden Hour</string>
+    <string name="str_evening">Evening Golden Hour</string>
+    <string name="str_goldenHourStart">Start</string>
+    <string name="str_goldenHourEnd">End</string>
+    <string name="str_Timemoonrise">Moon Rise</string>
+    <string name="str_Timemoonset">Moon Set</string>
+    <string name="day">Day</string>
+    <string name="normal">Normal</string>
+    <string name="superMoon">Super moon</string>
+    <string name="microMoon">Micro moon</string>
+    <string name="str_TimeSunrise">Sunrise Time</string>
+    <string name="str_TimeSunset">Sunset Time</string>
+    <string name="btn_getmoonPhase">Get moon phase</string>
+
+
+    <string name="lbl_soon">soon</string>
+    <string name="lbl_news">new Changes</string>
+    <string name="lbl_news_0">New Wallpapers background landscape portfolio</string>
+    <string name="lbl_news_1">New images of the moon in % of the moon phase, for VIP and Ads users.</string>
+    <string name="lbl_news_2">New notifications for lunar phases and upcoming eclipses to occur a few days before.</string>
+    <string name="lbl_news_3">New feature, solar and lunar eclipse query by date and location.</string>
+
+    <!--Rate it Dialog-->
+    <string name="rate_never">Never</string>
+    <string name="rate_remind_later">Remind me Later</string>
+    <string name="rate_positive">Rate it</string>
+    <string name="rate_message">If you liked this application, please rate us and give us your opinion.</string>
+    <string name="rate_title">Rate this app</string>
+
+    <string name="never_show">Never show again</string>
+    <string name="lbl_Ok" translatable="false">OK</string>
+
+    <string name="permission_global_msg">¡Hello! In order for this application to work properly, we kindly request your permission to access certain resources. This will allow us to provide you with the best possible experience. Could you please grant us the requested permission? We appreciate your cooperation. Thank you!</string>
+    <string name="permission_global_title">Permission Request: Please Grant Access</string>
+
+    <string name="location_unable_to_geocode">Unable to decode your location - perhaps your network isn\'t available?</string>
+    <string name="location_not_found_title" >Sorry</string>
+    <string name="location_not_found" >%s not found.</string>
+
+    <!-- fragment_input -->
+
+    <!-- Title -->
+    <string name="title_birth_data">Birth Chart Generator</string>
+    <string name="title_gps_coordinates">GPS Coordinates</string>
+    <string name="title_city_country_coordinates">City and Country Coordinates</string>
+    <string name="title_manual_coordinates">Enter Coordinates Manually</string>
+
+    <!-- Labels -->
+    <string name="label_name_surname">Name and Surname</string>
+    <string name="label_date_time_birth">Date and Time of Birth</string>
+    <string name="label_geolocation">Geolocation</string>
+    <string name="label_house_system">House System</string>
+    <string name="label_sidereal_mode">Sidereal Mode</string>
+
+    <!-- Hints -->
+    <string name="hint_name_surname">Enter your name and surname</string>
+    <string name="hint_date_time_birth">Select date and time of birth</string>
+    <string name="hint_date_time_birth_timezone">Select the timezone</string>
+    <string name="hint_date_time_birth_timezone_auto_chb">Manual TimeZone</string>
+    <string name="hint_date_time_birth_timezone_auto">Timezone from location</string>
+    <string name="hint_coordinates">Coordinates will be displayed here</string>
+    <string name="hint_city">Enter city</string>
+    <string name="hint_country">Enter country</string>
+    <string name="hint_latitude">Enter latitude</string>
+    <string name="hint_longitude">Enter longitude</string>
+
+    <!-- Radio Buttons -->
+    <string name="radio_gps">GPS</string>
+    <string name="radio_city_country">City and Country</string>
+    <string name="radio_manual">Manual</string>
+
+    <!-- Information Messages -->
+    <string name="info_location_permission">Location permission required</string>
+    <string name="info_internet_data">Internet connection required</string>
+    <string name="info_coordinate_format">Format: Decimal degrees</string>
+    <string name="info_format_city_country">Enter a location in the format \"City, Country\"</string>
+
+    <string name="generate_chart">Generate Chart</string>
+    <string name="btn_getLocation">Get Location</string>
+    <string name="str_datetime_valid">Select valid datetime</string>
+    <string name="str_datetime_invalid">Invalid datetime format</string>
+    <string name="str_invalid_latitud_format">Invalid latitude coordinates format.</string>
+    <string name="str_invalid_longitud_format">Invalid longitude coordinates format.</string>
+    <string name="str_invalid_latitud_range">The coordinates are out of bounds. Please enter latitude within the range of -90 to 90 degrees</string>
+    <string name="str_invalid_longitud_range">The coordinates are out of bounds. Please enter latitude within the range of  -180 to 180 degrees.</string>
+    <string name="str_permission_location_nogranted">Location permission not granted.</string>
+    <string name="str_location_unavailable">The location could not be obtained.</string>
+    <string name="str_gps_disabled">The location could not be obtained.</string>
+    <string name="str_fields_required">All fields are required. Please fill in all the fields.</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="more">More</string>
+    <string name="support">Support</string>
+    <string name="share">Share</string>
+    <string name="eclipse_explorer">Eclipse Explorer</string>
+    <string name="moonphase_calculator">Moonphase Calculator</string>
+    <string name="moon_calendar">Moon Calendar</string>
+    <string name="birthchart_generator">BirthChart Generator</string>
+    <string name="str_birthchart_calulate">Thank you for using our app! By viewing the advertisements, you are providing me with great support to continue developing and maintaining the features for free for all app users. Your support is invaluable and greatly appreciated. Thank you for being a part of our app!</string>
+    <string name="str_ads_title">Thank you for using our app!</string>
+    <string name="str_ads_msg">By viewing the ads, you are providing me with great support to continue developing and maintaining the features for free for all users of the app. Your support is invaluable and highly appreciated. Thank you for being part of our app!</string>
+    <string name="label_type_chart">Chart Type:</string>
+    <string name="label_type_tmz">TimeZone</string>
+    <string name="label_coordinates">Coordinates:</string>
+    <string name="str_data_del">Delete data</string>
+    <string name="str_Updated">Data was Updated</string>
+    <string name="str_Update_fail">Could not update data</string>
+    <string name="str_delete_fail">There is no data to delete</string>
+    <string name="str_delete">Data was deleted</string>
+    <string name="str_save">Data saved</string>
+    <string name="str_save_fail">Data could not be saved.</string>
+    <string name="str_update_msg">Want to update data</string>
+    <string name="str_save_msg">Want to save the data</string>
+    <string name="str_delete_msg">Want to delete all storaged data</string>
+    <string name="str_select_data">Select</string>
+    <!-- fragment_input -->
+</resources>
